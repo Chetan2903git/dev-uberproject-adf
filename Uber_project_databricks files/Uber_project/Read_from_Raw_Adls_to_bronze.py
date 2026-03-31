@@ -13,7 +13,7 @@ files = [
 
 for file in files:
     #to access data from adls we need to get the public URL of the adls container and Saas Token and enter in this format- "(URL)?(SaasToken)"
-    URL= f"https://uberprojectdata.blob.core.windows.net/raw/ingestion/{file['file']}.json?sp=r&st=2026-03-30T11:29:23Z&se=2026-04-02T19:44:23Z&spr=https&sv=2024-11-04&sr=c&sig=Rp2UcsC%2Bp0LyHfKnDY0RfVgKfPIiVVMMxIQ6jrofnJM%3D"
+    URL= f"https://uberprojectdata.blob.core.windows.net/raw/ingestion/{file['file']}.json?(SaasToken)"
 
     df = pd.read_json(URL)
     #convert into Spark dataframe
@@ -28,7 +28,7 @@ for file in files:
 
 # COMMAND ----------
 
-url = "https://uberprojectdata.blob.core.windows.net/raw/ingestion/bulk_rides.json?sp=r&st=2026-03-30T11:29:23Z&se=2026-04-02T19:44:23Z&spr=https&sv=2024-11-04&sr=c&sig=Rp2UcsC%2Bp0LyHfKnDY0RfVgKfPIiVVMMxIQ6jrofnJM%3D"
+url = "https://uberprojectdata.blob.core.windows.net/raw/ingestion/bulk_rides.json?(SaasToken)"
 
 df = pd.read_json(url)
 df_spark = spark.createDataFrame(df)
