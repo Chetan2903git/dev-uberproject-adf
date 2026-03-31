@@ -1,0 +1,26 @@
+{
+	"name": "DS_github",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_GitHub",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"P_file": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "Chetan2903git/dev-uberproject-adf/refs/heads/main/Uber-Test_Data/@{dataset().P_file}",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	}
+}
