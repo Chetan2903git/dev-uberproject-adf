@@ -1,0 +1,9 @@
+{
+	"name": "dev-uberproject-adf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5112c33f-844d-4b5b-b258-db7e43cd0f8c",
+		"tenantId": "b2b5d1ae-430b-41a2-8fbf-c85cd284caa8"
+	}
+}
